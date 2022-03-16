@@ -1,2 +1,4 @@
 # grupo-02
-test 
+
+test
+haciendo pruebas... y errores!!!
