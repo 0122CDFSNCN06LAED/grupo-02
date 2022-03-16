@@ -1,4 +1,2 @@
 # grupo-02
-
-test
-haciendo pruebas... y errores!!!
+Estoy subiendo el trabajo conjunto de todos.
