@@ -1,0 +1,120 @@
+.home-container {
+  height: calc(100vh - 60px);
+  background-image: url(/images/banner-home.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.searchbar-card {
+  background-color: white;
+  padding: 25px;
+  border-radius: 25px;
+}
+
+.searchbar-text {
+  display: flex;
+  margin-top: 10px;
+}
+
+.searchbar-text p {
+  margin-left: 0.5rem;
+}
+
+.searchbar-text i {
+  width: 1.8rem;
+  height: 2rem;
+  color: grey;
+}
+
+.searchbar {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  font-size: 22px;
+  border-radius: 36px;
+  padding: 3px 10px;
+  border: 1px solid grey;
+}
+
+.searchbar input:focus {
+  outline: none;
+}
+
+.searchbar i {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.5em;
+  height: 1.5em;
+  color: grey;
+}
+
+.searchbar input {
+  display: flex;
+  border: none;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1;
+}
+
+.searchbar button {
+  border: none;
+  border-radius: 36px;
+  padding: 10px 20px;
+  background-color: grey;
+  color: white;
+}
+
+.availables {
+  margin-top: 20px;
+}
+
+.availables h2 {
+  margin-bottom: 20px;
+  margin-left: 8px;
+  margin-right: 8px;
+}
+
+.availables .availables-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 10px 30px 10px 0px;
+  margin-bottom: 16px;
+  margin-right: 8px;
+  margin-left: 8px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 5px rgb(100, 100, 100);
+  width: 100%;
+}
+
+.a-img {
+  width: 50%;
+  height: 150px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+}
+
+/* Tablet + */
+@media (min-width: 480px) {
+  .item {
+    width: calc(50% - 16px);
+  }
+}
+
+/* Laptop + */
+@media (min-width: 768px) {
+  .item {
+    width: calc(25% - 16px);
+  }
+}

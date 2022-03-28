@@ -1,0 +1,61 @@
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+header {
+  background-color: grey;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+header .navbar {
+  display: none;
+}
+
+header .navbar ul {
+  list-style: none;
+  display: flex;
+}
+
+header .navbar ul li {
+  margin-left: 0.7em;
+  color: lightgray;
+}
+
+footer {
+  background-color: grey;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer-center {
+  display: none;
+}
+
+.footer-center ul li {
+  margin-left: 0.5em;
+  color: lightgrey;
+}
+
+.footer-center ul {
+  list-style: none;
+  display: flex;
+}
+
+/* Laptop + */
+@media (min-width: 768px) {
+  header .navbar {
+    display: inline-block;
+    margin-right: 20px;
+  }
+
+  header .burger-menu {
+    display: none;
+  }
+
+  .footer-center {
+    display: inline-block;
+  }
+}

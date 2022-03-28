@@ -1,0 +1,100 @@
+main {
+  height: calc(100vh - 134px);
+  width: 100%;
+  display: block;
+  text-align: center;
+  padding-top: 10vh;
+  background-color: #f0f0f0;
+}
+
+main h1 {
+  margin-bottom: 20px;
+}
+
+.login-line-item {
+  display: flex;
+  width: 315px;
+  border-radius: 16px;
+  margin-top: 15px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: lightgray;
+  padding-right: 40px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 17px;
+  color: gray;
+}
+
+.input-text {
+  width: 100%;
+  height: 56px;
+  text-align: center;
+  border: 1px solid lightgrey;
+  border-left: none;
+  color: gray;
+  font-size: 0.9em;
+  background-color: lightgray;
+}
+
+.input-text:focus {
+  outline: none;
+}
+
+.remember-recovery {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.65em;
+  width: 315px;
+  margin: 5px auto;
+  padding: 5px;
+  color: gray;
+}
+
+.remember {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.remember input {
+  margin-right: 0.3em;
+}
+
+.buttons {
+  margin: 20px auto;
+}
+
+.button-card {
+  margin-top: 0.5em;
+}
+
+.button {
+  width: 232px;
+  height: 52px;
+  border-radius: 30px;
+  border: 1px solid grey;
+  background-color: grey;
+  color: white;
+}
+
+/* Tablet + */
+@media (min-width: 480px) {
+}
+
+/* Laptop + */
+@media (min-width: 768px) {
+  .main-card {
+    background-color: #fff;
+    width: 400px;
+    margin: 0 auto;
+    padding: 30px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 8px;
+  }
+}
