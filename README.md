@@ -1,5 +1,7 @@
 # Trabajo integrador - Grupo 2
 
+[Trello](https://trello.com/b/vauTUPyn/grupo-2-proyecto-integrador-dh)
+
 ## Temática del sitio:
 
 - Buscador de estacionamiento, en cochera personal.

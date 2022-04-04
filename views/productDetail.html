@@ -7,7 +7,7 @@
     <title>Login</title>
     <link rel="stylesheet" href="/css/normalize.css" />
     <link rel="stylesheet" href="/css/theme.css" />
-    <link rel="stylesheet" href="/css/register.css" />
+    <link rel="stylesheet" href="/css/ProductDetail.css" />
     <script
       src="https://kit.fontawesome.com/1b0bfed0c5.js"
       crossorigin="anonymous"
@@ -33,57 +33,22 @@
       <div class="burger-menu"><i class="fa-solid fa-bars"></i></div>
     </header>
     <main>
-      <div class="main-card">
-        <h1>Crea tu cuenta</h1>
-        <form action="/register" method="POST">
-          <div class="register-line-item">
-            <div class="icon"><i class="fa-solid fa-phone"></i></i></div>
-            <label for="phone"></label>
-            <input
-              class="input-text"
-              type="tel"
-              name="phone"
-              placeholder="Telefono"
-            />
-          </div>
-            <div class="register-line-item">
-              <div class="icon"><i class="fa-solid fa-user"></i></div>
-              <label for="name"></label>
-              <input
-                class="input-text"
-                type="text"
-                name="name"
-                placeholder="Nombre"
-              />
-            </div>
-            <div class="register-line-item">
-              <div class="icon"><i class="fa-solid fa-envelope"></i></div>
-              <label for="email"></label>
-              <input
-                class="input-text"
-                type="email"
-                name="email"
-                placeholder="Email"
-              />
-            </div>
-            <div class="register-line-item">
-            <div class="icon"><i class="fa-solid fa-lock"></i></div>
-            <label for="password"></label>
-            <input
-              class="input-text"
-              type="password"
-              name="password"
-              placeholder="Contraseña"
-            />
-          </div>
-            <div class="buttons">
-              <div class="button-card">
-                <button type="submit" class="button">CONFIRMAR</button>
-              </div>
-            </div>
-          </div>
-        </form>
-      </div>
+      <section class="product-detail-top">
+        <div
+          class="product-img"
+          style="background-image: url(/images/disp-1.jpg)"
+        ></div>
+      </section>
+      <section class="product-detail-bottom">
+        <div class="bottom-text">
+          <h3>NOMBRE</h3>
+          <p>UBICACION</p>
+          <h2>TARIFA/HORA</h2>
+        </div>
+        <div class="reserve-button">
+          <input type="submit" value="RESERVAR" class="button" />
+        </div>
+      </section>
     </main>
     <footer>
       <div class="footer-left">
