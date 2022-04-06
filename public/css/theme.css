@@ -47,6 +47,10 @@ footer {
   display: flex;
 }
 
+.footer-redes {
+  margin-right: 5x;
+}
+
 /* Laptop + */
 @media (min-width: 768px) {
   header .navbar {
