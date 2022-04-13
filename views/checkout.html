@@ -4,10 +4,10 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Login</title>
+    <title>Checkout</title>
     <link rel="stylesheet" href="/css/normalize.css" />
     <link rel="stylesheet" href="/css/theme.css" />
-    <link rel="stylesheet" href="/css/login.css" />
+    <link rel="stylesheet" href="/css/checkout.css" />
     <script
       src="https://kit.fontawesome.com/1b0bfed0c5.js"
       crossorigin="anonymous"
@@ -33,51 +33,42 @@
       <div class="burger-menu"><i class="fa-solid fa-bars"></i></div>
     </header>
     <main>
-      <div class="main-card">
-        <h1>Iniciar sesión</h1>
-        <form action="/login" method="POST">
-          <div class="login-line-item">
-            <div class="icon"><i class="fa-solid fa-envelope"></i></div>
-            <label for="email"></label>
-            <input
-              class="input-text"
-              type="email"
-              name="email"
-              placeholder="Email"
-            />
-          </div>
-          <div class="login-line-item">
-            <div class="icon"><i class="fa-solid fa-lock"></i></div>
-            <label for="password"></label>
-            <input
-              class="input-text"
-              type="password"
-              name="password"
-              placeholder="Contraseña"
-            />
-          </div>
-          <div class="login-line-bottom">
-            <div class="remember-recovery">
-              <div class="remember">
-                <input type="checkbox" name="remember" />
-                <label for="remember">Recordar contraseña</label>
-              </div>
-              <p>
-                <a href="">¿Olvidaste la contraseña? </a>
-              </p>
+      <div class="checkout">
+        <h1>Confirmá y pagá</h1>
+        <section class="description card">
+          <h2>Tu estacionamiento</h2>
+          <section class="product-detail-left">
+            <div
+              class="product-img"
+              style="background-image: url(/images/disp-1.jpg)"
+            ></div>
+          </section>
+          <section class="product-detail-right">
+            <div class="bottom-text">
+              <h3>NOMBRE COCHERA</h3>
+              <p>UBICACION</p>
+              <h4>PROPIETARIO</h4>
             </div>
-            <div class="buttons">
-              <div class="button-card">
-                <button type="submit" class="button">INICIAR SESIÓN</button>
-              </div>
-              <div class="button-card">
-                <a href="/register"
-                  ><button class="button" type="button">REGISTRARSE</button></a
-                >
-              </div>
-            </div>
+          </section>
+        </section>
+        <section class="your-reserve card">
+          <h2>Tu reserva</h2>
+          <section class="content">
+            <p>Fecha y hora:</p>
+            <p>Tarifa:</p>
+          </section>
+        </section>
+        <div class="price-detail card">
+          <h2>Detalle del precio</h2>
+          <div class="content">
+            <p>Estadia:</p>
+            <p>Comision por servicio:</p>
+            <p>Total final:</p>
           </div>
-        </form>
+        </div>
+        <div class="reserve-button">
+          <input type="submit" value="RESERVAR" class="button" />
+        </div>
       </div>
     </main>
     <footer>

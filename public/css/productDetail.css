@@ -14,8 +14,8 @@ main {
 }
 
 .product-detail-bottom {
-  padding-top: 40px;
-  padding-left: 20%;
+  margin-top: 40px;
+  margin-left: 20%;
 }
 
 .button {
@@ -35,17 +35,31 @@ main {
 @media (min-width: 480px) {
   .product-img {
     height: 350px;
+    width: 90%;
+    margin: 0 auto;
+    border-radius: 3px;
   }
 }
 
 /* Laptop + */
 @media (min-width: 768px) {
-  main {
+  .product-detail {
     display: flex;
-    padding: auto;
+    align-items: center;
+    justify-content: center;
+    padding-top: 7%;
+  }
+  .product-detail-bottom {
+    margin: 30px 15px 0;
+    padding: 12px;
+    border: 1px lightgrey solid;
+    border-radius: 12px;
+  }
+  .product-detail-top {
+    width: 700px;
   }
   .product-img {
-    width: 700px;
+    flex: 1 1 700px;
     height: 450px;
     background-size: cover;
     background-repeat: no-repeat;
