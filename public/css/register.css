@@ -78,3 +78,14 @@ main h1 {
     border-radius: 8px;
   }
 }
+
+.background {
+  height: calc(100vh - 60px);
+  background-image: url(/images/banner-home.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

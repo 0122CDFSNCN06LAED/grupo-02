@@ -10,6 +10,16 @@ main {
 main h1 {
   margin-bottom: 20px;
 }
+.background {
+  height: calc(100vh - 60px);
+  background-image: url(/images/banner-home.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 .login-line-item {
   display: flex;
