@@ -1,7 +1,9 @@
-# RETRO spring 2
+# RETRO SPRINT 2
 
 ## Comenzar a hacer
  - Se decide seguir haciendo reuniones semanales para coordinar y repartir tareas de forma equitativa y según aptitudes de cada integrante del grupo.
+ - Se decide la creación de un grupo de WhatsApp para mejorar la comunicación.
+ - Se establece comunicar vía WhatsApp la contribución que haga cada uno.
 ## Hacer más
 - Decidimos hacer enfoque en la funcionalidad del sitio más que sobre la estética, siendo que ésta última puede ser abordada con posterioridad.
 ## Continuar haciendo 
