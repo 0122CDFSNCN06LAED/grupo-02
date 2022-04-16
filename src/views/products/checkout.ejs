@@ -1,37 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <%- include('../partials/head.ejs') %>
     <title>Checkout</title>
-    <link rel="stylesheet" href="/css/normalize.css" />
-    <link rel="stylesheet" href="/css/theme.css" />
     <link rel="stylesheet" href="/css/checkout.css" />
-    <script
-      src="https://kit.fontawesome.com/1b0bfed0c5.js"
-      crossorigin="anonymous"
-    ></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
-      rel="stylesheet"
-    />
   </head>
   <body>
-    <header>
-      <a href="/"><img src="/images/logo.png" alt="logo" height="20px" /></a>
-      <div class="navbar">
-        <ul>
-          <a href="/register"><li>Crea tu cuenta</li></a>
-          <a href="/login"><li>Ingresar</li></a>
-          <li>Publicar</li>
-          <li>Favoritos</li>
-        </ul>
-      </div>
-      <div class="burger-menu"><i class="fa-solid fa-bars"></i></div>
-    </header>
+    <%- include('../partials/header.ejs') %>
     <main>
       <div class="checkout">
         <h1>Confirmá y pagá</h1>
@@ -71,25 +46,6 @@
         </div>
       </div>
     </main>
-    <footer>
-      <div class="footer-left">
-        <img src="/images/logo.png" alt="logo-footer" height="10px" />
-        <p class="copyright" style="color: lightgrey; font-size: 0.8em">
-          Copyright © 2022
-        </p>
-      </div>
-      <div class="footer-center">
-        <ul>
-          <li><a href=""></a>Nosotros</li>
-          <li><a href=""></a>Contacto</li>
-          <li><a href=""></a>Ayuda</li>
-        </ul>
-      </div>
-      <div class="footer-right" style="color: lightgrey; font-size: 1.2em">
-        <i class="fa-brands fa-twitter"></i>
-        <i class="fa-brands fa-instagram"></i>
-        <i class="fa-brands fa-facebook"></i>
-      </div>
-    </footer>
+    <%- include('../partials/footer.ejs') %>
   </body>
 </html>

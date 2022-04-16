@@ -3,7 +3,6 @@ main {
   width: 100%;
   display: block;
   text-align: center;
-  padding-top: 10vh;
   background-color: #f0f0f0;
 }
 
@@ -11,7 +10,6 @@ main h1 {
   margin-bottom: 20px;
 }
 .background {
-  height: calc(100vh - 60px);
   background-image: url(/images/banner-home.jpg);
   background-size: cover;
   background-repeat: no-repeat;
