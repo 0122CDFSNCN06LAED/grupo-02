@@ -5,4 +5,7 @@ module.exports = {
   checkout: (req, res) => {
     res.render("./products/checkout");
   },
+  editAndCreate: (req, res) => {
+    res.render("./products/create-and-edit");
+  },
 };

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('../partials/head.ejs') %>
+    <title>Crear y editar</title>
+    <link rel="stylesheet" href="/css/create-and-edit.css" />
+  </head>
+  <body>
+    <%- include('../partials/header.ejs') %>
+    <main>
+      <h1>Editar una publicación</h1>
+      <form action="/edit-and-create" method="POST">
+        <div class="form-item">
+          <label for="name">Nombre: </label>
+          <input type="text" name="name" id="name" />
+        </div>
+
+        <div class="form-item">
+          <label for="description">Descripción: </label>
+          <input type="text" name="description" id="description" />
+        </div>
+
+        <div class="form-item">
+          <label for="image">Imagen: </label>
+          <input type="file" accept=".jpg" name="image" id="image" />
+        </div>
+
+        <div class="form-item">
+          <label for="location">Ubicación: </label>
+          <input type="text" name="location" id="location" />
+        </div>
+
+        <div class="form-item">
+          <label for="size">Tamaño: </label>
+          <input type="text" name="size" id="size" />
+        </div>
+
+        <div class="form-item">
+          <label for="price">Tarifa: </label>
+          <input type="number" min="0" name="price" id="price" />
+        </div>
+
+        <div class="form-item">
+          <input type="submit" value="EDITAR" class="button" />
+        </div>
+      </form>
+    </main>
+    <%- include('../partials/footer.ejs') %>
+  </body>
+</html>

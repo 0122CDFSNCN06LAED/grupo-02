@@ -11,5 +11,6 @@ mainRouter.get("/login", usersController.login);
 mainRouter.get("/register", usersController.register);
 mainRouter.get("/productDetail", productsController.productDetail);
 mainRouter.get("/checkout", productsController.checkout);
+mainRouter.get("/editAndCreate", productsController.editAndCreate);
 
 module.exports = mainRouter;
