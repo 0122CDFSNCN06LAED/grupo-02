@@ -1,5 +1,4 @@
 main {
-  height: calc(100vh - 134px);
   width: 100%;
   display: block;
   text-align: center;
@@ -10,7 +9,6 @@ main h1 {
   margin-bottom: 20px;
 }
 .background {
-  background-image: url(/images/banner-home.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: 50% 50%;

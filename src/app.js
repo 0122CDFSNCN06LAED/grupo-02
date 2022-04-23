@@ -3,6 +3,8 @@ const path = require("path");
 const express = require("express");
 
 const mainRouter = require("./routes/main-routes");
+const productsRouter = require("./routes/products-routes");
+const usersRouter = require("./routes/users-routes");
 
 const app = express();
 
@@ -17,3 +19,5 @@ app.listen(PORT, () => {
 app.use(express.static(path.join(__dirname, "../public")));
 
 app.use(mainRouter);
+app.use(productsRouter);
+app.use(usersRouter);

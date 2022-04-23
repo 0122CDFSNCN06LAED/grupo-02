@@ -1,5 +1,4 @@
 main {
-  height: calc(100vh - 138px);
   width: 100%;
   display: flex;
   flex-direction: column;

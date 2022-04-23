@@ -1,5 +1,4 @@
 main {
-  height: calc(100vh - 134px);
   width: 100%;
   display: block;
   text-align: center;
@@ -56,6 +55,7 @@ h2 {
   border: 1px solid grey;
   background-color: grey;
   color: white;
+  margin-bottom: 10px;
 }
 
 .reserve-button {

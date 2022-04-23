@@ -2,13 +2,13 @@
 <html lang="en">
   <head>
     <%- include('../partials/head.ejs') %>
-    <title>Crear y editar</title>
+    <title><%= title %></title>
     <link rel="stylesheet" href="/css/create-and-edit.css" />
   </head>
   <body>
     <%- include('../partials/header.ejs') %>
     <main>
-      <h1>Editar una publicación</h1>
+      <h1><%= h1 %></h1>
       <form action="/edit-and-create" method="POST">
         <div class="form-item">
           <label for="name">Nombre: </label>
@@ -41,7 +41,7 @@
         </div>
 
         <div class="form-item">
-          <input type="submit" value="EDITAR" class="button" />
+          <input type="submit" value="<%= value %>" class="button" />
         </div>
       </form>
     </main>

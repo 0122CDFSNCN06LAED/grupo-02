@@ -51,6 +51,9 @@ footer {
   margin-right: 5x;
 }
 
+main {
+  min-height: calc(100vh - 138px);
+}
 /* Laptop + */
 @media (min-width: 768px) {
   header .navbar {

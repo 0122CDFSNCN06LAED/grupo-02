@@ -5,7 +5,18 @@ module.exports = {
   checkout: (req, res) => {
     res.render("./products/checkout");
   },
-  editAndCreate: (req, res) => {
-    res.render("./products/create-and-edit");
+  edit: (req, res) => {
+    res.render("./products/create-and-edit", {
+      title: "Editar",
+      h1: "Editar la publicacion",
+      value: "EDITAR",
+    });
+  },
+  create: (req, res) => {
+    res.render("./products/create-and-edit", {
+      title: "Crear",
+      h1: "Crear una publicacion",
+      value: "CREAR",
+    });
   },
 };
