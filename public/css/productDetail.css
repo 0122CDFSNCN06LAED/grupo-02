@@ -1,7 +1,7 @@
 main {
   width: 100%;
-  padding-top: 5vh;
   background-color: #f0f0f0;
+  padding-top: 5vh;
 }
 
 .product-img {
@@ -42,6 +42,9 @@ main {
 
 /* Laptop + */
 @media (min-width: 768px) {
+  main {
+    padding-top: 0;
+  }
   .product-detail {
     display: flex;
     align-items: center;

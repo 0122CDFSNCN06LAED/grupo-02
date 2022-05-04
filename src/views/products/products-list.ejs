@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('../partials/head.ejs') %>
+    <title>Lista de publicaciones</title>
+    <link rel="stylesheet" href="/css/products-list.css" />
+  </head>
+  <body>
+    <%- include('../partials/header.ejs') %>
+    <main>
+      <div class="row">
+        <% products.forEach(element => { %>
+        <div class="product-box">
+          <section class="product-left">
+            <div
+              class="product-img"
+              style="background-image: url(/images/disp-1.jpg)"
+            ></div>
+          </section>
+          <section class="product-right">
+            <div class="product-text">
+              <h3><%= element.name %></h3>
+              <p><%= element.location %></p>
+              <h2>$ <%= element.price %> /Hora</h2>
+            </div>
+          </section>
+        </div>
+        <% }) %>
+      </div>
+    </main>
+    <%- include('../partials/footer.ejs') %>
+  </body>
+</html>

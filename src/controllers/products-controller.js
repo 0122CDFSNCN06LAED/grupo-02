@@ -1,6 +1,21 @@
+fs = require("fs");
+path = require("path");
+
+const productsFilePath = path.join(__dirname, "../data/products.json");
+const products = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
+
 module.exports = {
-  productDetail: (req, res) => {
-    res.render("./products/productDetail");
+  detail: (req, res) => {
+    id = req.params.id;
+    const product = products.find((p) => id == p.id);
+    res.render("./products/product-detail", {
+      products: product,
+    });
+  },
+  products: (req, res) => {
+    res.render("./products/products-list", {
+      products: products,
+    });
   },
   checkout: (req, res) => {
     res.render("./products/checkout");
@@ -17,6 +32,28 @@ module.exports = {
       title: "Crear",
       h1: "Crear una publicacion",
       value: "CREAR",
+      action: "/products",
+      method: "POST",
     });
+  },
+  store: (req, res) => {
+    const lastIndex = products.length - 1;
+    const lastProduct = products[lastIndex];
+    const biggestId = lastProduct ? lastProduct.id : 0;
+    const newId = biggestId + 1;
+    console.log(req.body);
+
+    const product = {
+      ...req.body,
+      price: Number(req.body.price),
+      id: newId,
+    };
+
+    products.push(product);
+
+    const jsonTxt = JSON.stringify(products, null, 2);
+    fs.writeFileSync(productsFilePath, jsonTxt, "utf-8");
+
+    res.redirect("/products");
   },
 };

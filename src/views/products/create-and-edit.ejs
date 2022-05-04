@@ -9,7 +9,11 @@
     <%- include('../partials/header.ejs') %>
     <main>
       <h1><%= h1 %></h1>
-      <form action="/edit-and-create" method="POST">
+      <form
+        action="<%= action %>"
+        method="<%= method %>"
+        enctype="multipart/form-data"
+      >
         <div class="form-item">
           <label for="name">Nombre: </label>
           <input type="text" name="name" id="name" />
@@ -41,7 +45,7 @@
         </div>
 
         <div class="form-item">
-          <input type="submit" value="<%= value %>" class="button" />
+          <button type="submit" class="button"><%= value %></button>
         </div>
       </form>
     </main>
