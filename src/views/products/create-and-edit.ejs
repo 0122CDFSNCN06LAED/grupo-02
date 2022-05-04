@@ -16,32 +16,60 @@
       >
         <div class="form-item">
           <label for="name">Nombre: </label>
-          <input type="text" name="name" id="name" />
+          <input
+            type="text"
+            name="name"
+            id="name"
+            <% if (product) { %>
+             value = "<%= product.name %> "
+            <% }  else { %>
+              value = "" <% } %> 
+          />
         </div>
 
         <div class="form-item">
           <label for="description">Descripción: </label>
-          <input type="text" name="description" id="description" />
+          <input type="text" name="description" id="description" 
+          <% if (product) { %>
+            value = "<%= product.description %> "
+           <% }  else { %>
+             value = "" <% } %> />
         </div>
 
         <div class="form-item">
           <label for="image">Imagen: </label>
-          <input type="file" accept=".jpg" name="image" id="image" />
+          <input type="file" accept=".jpg" name="image" id="image" 
+          <% if (product) { %>
+            value = "<%= product.image %> "
+           <% }  else { %>
+             value = "" <% } %> />
         </div>
 
         <div class="form-item">
           <label for="location">Ubicación: </label>
-          <input type="text" name="location" id="location" />
+          <input type="text" name="location" id="location" 
+          <% if (product) { %>
+            value = "<%= product.location %> "
+           <% }  else { %>
+             value = "" <% } %> />
         </div>
 
         <div class="form-item">
           <label for="size">Tamaño: </label>
-          <input type="text" name="size" id="size" />
+          <input type="text" name="size" id="size" 
+          <% if (product) { %>
+            value = "<%= product.size %> "
+           <% }  else { %>
+             value = "" <% } %> />
         </div>
 
         <div class="form-item">
           <label for="price">Tarifa: </label>
-          <input type="number" min="0" name="price" id="price" />
+          <input type="number" min="0" name="price" id="price" 
+          <% if (product) { %>
+            value = "<%= Number(product.price) %> "
+           <% }  else { %>
+             value = "" <% } %> />
         </div>
 
         <div class="form-item">

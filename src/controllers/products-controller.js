@@ -21,10 +21,15 @@ module.exports = {
     res.render("./products/checkout");
   },
   edit: (req, res) => {
+    id = req.params.id;
+    const product = products.find((p) => id == p.id);
     res.render("./products/create-and-edit", {
       title: "Editar",
       h1: "Editar la publicacion",
       value: "EDITAR",
+      action: "/product/:id?_method=PUT",
+      method: "POST",
+      product: product,
     });
   },
   create: (req, res) => {
@@ -34,6 +39,7 @@ module.exports = {
       value: "CREAR",
       action: "/products",
       method: "POST",
+      product: {}
     });
   },
   store: (req, res) => {
@@ -41,15 +47,45 @@ module.exports = {
     const lastProduct = products[lastIndex];
     const biggestId = lastProduct ? lastProduct.id : 0;
     const newId = biggestId + 1;
-    console.log(req.body);
+    const datosRecibidos = JSON.parse(JSON.stringify(req.body));
 
     const product = {
-      ...req.body,
-      price: Number(req.body.price),
+      name: datosRecibidos.name,
+      description: datosRecibidos.description,
+      location: datosRecibidos.location,
+      size: datosRecibidos.size,
+      price: Number(datosRecibidos.price),
       id: newId,
     };
 
     products.push(product);
+
+    const jsonTxt = JSON.stringify(products, null, 2);
+    fs.writeFileSync(productsFilePath, jsonTxt, "utf-8");
+
+    res.redirect("/products");
+  },
+  update: (req, res) => {
+    const id = req.params.id;
+
+    const product = products.find((p) => id == p.id);
+
+    Object.assign(product, {
+      ...req.body,
+      price: Number(req.body.price),
+      discount: Number(req.body.discount),
+    });
+
+    const jsonTxt = JSON.stringify(products, null, 2);
+    fs.writeFileSync(productsFilePath, jsonTxt, "utf-8");
+
+    res.redirect("/products/" + id);
+  },
+  destroy: (req, res) => {
+    const id = req.params.id;
+    const productIndex = products.findIndex((p) => id == p.id);
+
+    products.splice(productIndex, 1);
 
     const jsonTxt = JSON.stringify(products, null, 2);
     fs.writeFileSync(productsFilePath, jsonTxt, "utf-8");

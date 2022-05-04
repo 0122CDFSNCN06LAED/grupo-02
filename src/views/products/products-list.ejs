@@ -23,6 +23,11 @@
               <p><%= element.location %></p>
               <h2>$ <%= element.price %> /Hora</h2>
             </div>
+            <div class="delete">
+              <form action="/products/:id?_method=DELETE" method="POST">
+                <button type="submit" >Borrar</button>
+              </form>
+            </div>
           </section>
         </div>
         <% }) %>
