@@ -22,12 +22,13 @@ module.exports = {
   },
   edit: (req, res) => {
     id = req.params.id;
+    action = "/products/"+ id +"?_method=PUT";
     const product = products.find((p) => id == p.id);
     res.render("./products/create-and-edit", {
       title: "Editar",
       h1: "Editar la publicacion",
       value: "EDITAR",
-      action: "/product/:id?_method=PUT",
+      action: action,
       method: "POST",
       product: product,
     });
@@ -67,7 +68,7 @@ module.exports = {
   },
   update: (req, res) => {
     const id = req.params.id;
-
+    console.log(id)
     const product = products.find((p) => id == p.id);
 
     Object.assign(product, {
@@ -83,7 +84,7 @@ module.exports = {
   },
   destroy: (req, res) => {
     const id = req.params.id;
-    const productIndex = products.findIndex((p) => id == p.id);
+    const productIndex = products.findIndex(e => e.id == id);
 
     products.splice(productIndex, 1);
 

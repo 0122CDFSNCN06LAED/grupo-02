@@ -12,7 +12,6 @@
       <form
         action="<%= action %>"
         method="<%= method %>"
-        enctype="multipart/form-data"
       >
         <div class="form-item">
           <label for="name">Nombre: </label>
@@ -65,7 +64,7 @@
 
         <div class="form-item">
           <label for="price">Tarifa: </label>
-          <input type="number" min="0" name="price" id="price" 
+          <input type="text" name="price" id="price" 
           <% if (product) { %>
             value = "<%= Number(product.price) %> "
            <% }  else { %>
