@@ -4,7 +4,7 @@
   "description": "- Buscador de estacionamiento, en cochera personal.",
   "main": "app.js",
   "scripts": {
-    "start": "nodemon src/app.js",
+    "start": "nodemon -e js src/app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -23,6 +23,7 @@
     "ejs": "^3.1.6",
     "express": "^4.17.3",
     "method-override": "^3.0.0",
+    "multer": "^1.4.4",
     "nodemon": "^2.0.15"
   }
 }

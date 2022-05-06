@@ -12,7 +12,7 @@
         <section class="product-detail-top">
           <div
             class="product-img"
-            style="background-image: url(/images/disp-1.jpg)"
+            style="background-image: url(<%= products.image %>)"
           ></div>
         </section>
         <section class="product-detail-bottom">
@@ -20,6 +20,9 @@
             <h3><%= products.name %></h3>
             <p><%= products.location %></p>
             <h2>$ <%= products.price %> /HORA</h2>
+          </div>
+          <div class="edit-button">
+            <a href="/products/<%= products.id %>/edit"><input type="button" value="EDITAR"></a>
           </div>
           <div class="reserve-button">
             <input type="submit" value="RESERVAR" class="button" />

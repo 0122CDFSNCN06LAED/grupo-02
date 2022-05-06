@@ -10,7 +10,8 @@
     <main>
       <div class="row">
         <% products.forEach(element => { %>
-        <div class="product-box">
+        <a href="/products/<%= element.id %> ">
+          <div class="product-box">
           <section class="product-left">
             <div
               class="product-img"
@@ -30,6 +31,7 @@
             </div>
           </section>
         </div>
+      </a>
         <% }) %>
       </div>
     </main>

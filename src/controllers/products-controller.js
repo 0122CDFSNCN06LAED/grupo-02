@@ -57,6 +57,7 @@ module.exports = {
       size: datosRecibidos.size,
       price: Number(datosRecibidos.price),
       id: newId,
+      image: req.file ? "/images/products/" + req.file.filename : "/images/products/default-image.png",
     };
 
     products.push(product);
@@ -68,13 +69,12 @@ module.exports = {
   },
   update: (req, res) => {
     const id = req.params.id;
-    console.log(id)
     const product = products.find((p) => id == p.id);
 
     Object.assign(product, {
       ...req.body,
       price: Number(req.body.price),
-      discount: Number(req.body.discount),
+      image: req.file ? "/images/products/" + req.file.filename : product.image,
     });
 
     const jsonTxt = JSON.stringify(products, null, 2);

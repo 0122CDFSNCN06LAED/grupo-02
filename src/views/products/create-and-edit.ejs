@@ -12,6 +12,7 @@
       <form
         action="<%= action %>"
         method="<%= method %>"
+        enctype="multipart/form-data"
       >
         <div class="form-item">
           <label for="name">Nombre: </label>
@@ -20,7 +21,7 @@
             name="name"
             id="name"
             <% if (product) { %>
-             value = "<%= product.name %> "
+             value = "<%= product.name %>"
             <% }  else { %>
               value = "" <% } %> 
           />
@@ -30,25 +31,21 @@
           <label for="description">Descripción: </label>
           <input type="text" name="description" id="description" 
           <% if (product) { %>
-            value = "<%= product.description %> "
+            value = "<%= product.description %>"
            <% }  else { %>
              value = "" <% } %> />
         </div>
 
         <div class="form-item">
           <label for="image">Imagen: </label>
-          <input type="file" accept=".jpg" name="image" id="image" 
-          <% if (product) { %>
-            value = "<%= product.image %> "
-           <% }  else { %>
-             value = "" <% } %> />
+          <input type="file" accept=".jpg" name="image" id="image" />
         </div>
 
         <div class="form-item">
           <label for="location">Ubicación: </label>
           <input type="text" name="location" id="location" 
           <% if (product) { %>
-            value = "<%= product.location %> "
+            value = "<%= product.location %>"
            <% }  else { %>
              value = "" <% } %> />
         </div>
@@ -57,7 +54,7 @@
           <label for="size">Tamaño: </label>
           <input type="text" name="size" id="size" 
           <% if (product) { %>
-            value = "<%= product.size %> "
+            value = "<%= product.size %>"
            <% }  else { %>
              value = "" <% } %> />
         </div>
@@ -66,7 +63,7 @@
           <label for="price">Tarifa: </label>
           <input type="text" name="price" id="price" 
           <% if (product) { %>
-            value = "<%= Number(product.price) %> "
+            value = "<%=product.price%>"
            <% }  else { %>
              value = "" <% } %> />
         </div>
