@@ -1,15 +1,5 @@
 [
   {
-    "id": 3,
-    "name": "Muy bueno",
-    "description": "Other bursitis, not elsewhere classified, unspecified elbow",
-    "image": "/images/disp-5.jpg",
-    "location": "92 Dapin Circle",
-    "size": 73,
-    "price": 254.91,
-    "available": true
-  },
-  {
     "id": 7,
     "name": "Estacionamiento",
     "description": "Oth traum displ spondylolysis of sixth cervcal vert, 7thB",
