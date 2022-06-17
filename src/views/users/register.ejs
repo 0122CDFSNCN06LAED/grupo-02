@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <%- include('../partials/head.ejs') %> 
-    <title>Login</title>
+    <title>Crear cuenta</title>
     <link rel="stylesheet" href="/css/register.css" />
   </head>
   <body>
@@ -10,7 +10,12 @@
     <main class="background">
       <div class="main-card">
         <h1>Crea tu cuenta</h1>
-        <form action="/register" method="POST">
+        <% if (locals.errors) { %>
+          <% for( let oneError in errors) { %>
+            <p><%= errors[oneError].msg %> </p>
+          <% } %>
+        <% } %>
+        <form action="/user/register" method="POST" enctype="multipart/form-data">
           <div class="register-line-item">
             <div class="icon"><i class="fa-solid fa-phone"></i></i></div>
             <label for="phone"></label>
@@ -19,6 +24,7 @@
               type="tel"
               name="phone"
               placeholder="Telefono"
+              value="<%= locals.oldData ? oldData.phone : null %>"
             />
           </div>
             <div class="register-line-item">
@@ -29,6 +35,7 @@
                 type="text"
                 name="name"
                 placeholder="Nombre"
+                value="<%= locals.oldData ? oldData.name : null %>"
               />
             </div>
             <div class="register-line-item">
@@ -39,6 +46,7 @@
                 type="email"
                 name="email"
                 placeholder="Email"
+                value="<%= locals.oldData ? oldData.email : null %>"
               />
             </div>
             <div class="register-line-item">
@@ -49,7 +57,13 @@
               type="password"
               name="password"
               placeholder="Contraseña"
+              value="<%= locals.oldData ? oldData.password : null %>"
             />
+          </div>
+            <div class="register-line-item">
+            <div class="icon"><i class="fa-solid fa-lock"></i></div>
+          <label for="avatar"></label>
+          <input type="file" accept=".jpg" name="avatar" id="avatar" class="input-text" placeholder="Imagen" />
           </div>
             <div class="buttons">
               <div class="button-card">
