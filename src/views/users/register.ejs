@@ -60,11 +60,13 @@
               value="<%= locals.oldData ? oldData.password : null %>"
             />
           </div>
+          <a href="">
             <div class="register-line-item">
-            <div class="icon"><i class="fa-solid fa-lock"></i></div>
-          <label for="avatar"></label>
-          <input type="file" accept=".jpg" name="avatar" id="avatar" class="input-text" placeholder="Imagen" />
-          </div>
+              <div class="icon"><i class="fa-solid fa-paperclip"></i></div>
+              <label for="avatar" class="input-text">Subir imagen</label>
+              <input type="file" accept=".jpg" name="avatar" id="avatar" class="input-text"  style="display: none" placeholder="Imagen" />
+            </div>
+          </a>
             <div class="buttons">
               <div class="button-card">
                 <button type="submit" class="button">CONFIRMAR</button>

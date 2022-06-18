@@ -10,6 +10,9 @@
     <main class="background">
       <div class="main-card">
         <h1>Iniciar sesión</h1>
+        <% if (locals.errors && errors.email) { %>
+        <p><%= errors.email.msg %></p>
+        <% } %>
         <form action="/login" method="POST">
           <div class="login-line-item">
             <div class="icon"><i class="fa-solid fa-envelope"></i></div>
@@ -35,7 +38,7 @@
             <div class="remember-recovery">
               <div class="remember">
                 <input type="checkbox" name="remember" />
-                <label for="remember">Recordar contraseña</label>
+                <label for="remember">Recordar usuario</label>
               </div>
               <p>
                 <a href="">¿Olvidaste la contraseña? </a>

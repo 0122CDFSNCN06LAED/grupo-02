@@ -4,6 +4,8 @@ fs = require("fs");
 path = require("path");
 const bcrypt = require("bcryptjs");
 
+const User = require("../models/User");
+
 const usersFilePath = path.join(__dirname, "../data/users.json");
 const users = JSON.parse(fs.readFileSync(usersFilePath, "utf-8"));
 
@@ -19,33 +21,79 @@ module.exports = {
     if (resultValidation.errors.length > 0) {
       return res.render("./users/register", {
         errors: resultValidation.mapped(),
-        oldData: req.body
+        oldData: req.body,
       });
     }
 
-    let encryptedPass = bcrypt.hashSync("password", 10);
+    let userInDB = User.findByField("email", req.body.email);
 
-    const lastIndex = users.length - 1;
-    const lastUser = users[lastIndex];
-    const biggestId = lastUser ? lastUser.id : 0;
-    const newId = biggestId + 1;
+    if (userInDB) {
+      return res.render("./users/register", {
+        errors: {
+          email: {
+            msg: "Este email ya está registrado",
+          },
+        },
+        oldData: req.body,
+      });
+    }
 
-     const user = {
-       id: newId,
-       name: req.body.name,
-       email: req.body.email,
-       phone: req.body.phone,
-       password: encryptedPass,
-       avatar: req.body.avatar
-         ? "/images/users/avatar" + req.avatar.filename
-         : "/images/users/avatar/default-image.png",
-     };
+    let encryptedPass = bcrypt.hashSync(req.body.password, 10);
 
-    users.push(user)
+    const userToCreate = {
+      ...req.body,
+      password: encryptedPass,
+      avatar: req.file.filename,
+    };
 
-    const jsonTxt = JSON.stringify(users, null, 2);
-    fs.writeFileSync(usersFilePath, jsonTxt, "utf-8");
+    User.create(userToCreate);
 
-    res.redirect('/')
-  }
-}
+    res.redirect("/login");
+  },
+  loginProcess: (req, res) => {
+    let userToLogin = User.findByField("email", req.body.email);
+    if (userToLogin) {
+      let isOkThePassword = bcrypt.compareSync(
+        req.body.password,
+        userToLogin.password
+      );
+      if (isOkThePassword) {
+        delete userToLogin.password;
+        req.session.userLogged = userToLogin;
+
+        if (req.body.remember) {
+          res.cookie("userEmail", req.body.email, { maxAge: 1000 * 60 * 60 });
+        }
+
+        console.log(req.body.remember);
+
+        return res.redirect("/user/profile");
+      }
+      return res.render("./users/login", {
+        errors: {
+          email: {
+            msg: "Las credenciales son inválidas",
+          },
+        },
+      });
+    }
+
+    return res.render("./users/login", {
+      errors: {
+        email: {
+          msg: "No se encuentra este email en nuestra base de datos",
+        },
+      },
+    });
+  },
+  profile: (req, res) => {
+    res.render("./users/user-profile", {
+      user: req.session.userLogged,
+    });
+  },
+  logout: (req, res) => {
+    res.clearCookie("userEmail");
+    req.session.destroy();
+    return res.redirect("/");
+  },
+};

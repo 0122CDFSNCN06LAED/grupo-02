@@ -41,7 +41,10 @@ main h1 {
 .input-text {
   width: 100%;
   height: 56px;
+  display: flex;
   text-align: center;
+  justify-content: center;
+  align-items: center;
   border: 1px solid lightgrey;
   border-left: none;
   color: gray;

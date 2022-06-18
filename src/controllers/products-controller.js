@@ -22,7 +22,7 @@ module.exports = {
   },
   edit: (req, res) => {
     id = req.params.id;
-    action = "/products/"+ id +"?_method=PUT";
+    action = "/products/" + id + "?_method=PUT";
     const product = products.find((p) => id == p.id);
     res.render("./products/create-and-edit", {
       title: "Editar",
@@ -40,7 +40,7 @@ module.exports = {
       value: "CREAR",
       action: "/products",
       method: "POST",
-      product: {}
+      product: {},
     });
   },
   store: (req, res) => {
@@ -57,7 +57,9 @@ module.exports = {
       size: datosRecibidos.size,
       price: Number(datosRecibidos.price),
       id: newId,
-      image: req.file ? "/images/products/" + req.file.filename : "/images/products/default-image.png",
+      image: req.file
+        ? "/images/products/" + req.file.filename
+        : "/images/products/default-image.png",
     };
 
     products.push(product);
@@ -84,7 +86,7 @@ module.exports = {
   },
   destroy: (req, res) => {
     const id = req.params.id;
-    const productIndex = products.findIndex(e => e.id == id);
+    const productIndex = products.findIndex((e) => e.id == id);
 
     products.splice(productIndex, 1);
 
